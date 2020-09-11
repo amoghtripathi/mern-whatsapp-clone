@@ -60,7 +60,7 @@ function Chat({messages}) {
 
                     placeholder="type ur msg" type="text" />
                     <button type="submit">
-                        Send
+                        sends
                     </button>
                 </form>
                 <IconButton>
