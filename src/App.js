@@ -10,10 +10,15 @@ function App() {
   const [messages, setMessages] = useState([]);
 
   useEffect(()=>{
-    axios.get('/messages/sync')
-    .then(response => {
+
+    async function fetchMessage(){
+      const response = await axios.get("/messages/sync");
       setMessages(response.data);
-    });
+
+      return response;
+    }
+
+    fetchMessage();
   },[]);
 
 
@@ -35,7 +40,7 @@ function App() {
     };
 
   }, [messages]);
-
+ 
 
   return (
     <div className="app">
